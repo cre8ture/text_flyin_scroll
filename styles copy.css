@@ -1,0 +1,88 @@
+ /* Add these CSS rules to your stylesheet */
+ .box {
+    position: absolute;
+/*       border: 2px solid red; */
+    box-sizing: border-box;
+    opacity: 1; /* Adjust the opacity as needed */
+    pointer-events: none;;
+  }
+
+  .char {
+    display: inline-block;
+    transform-origin: center;
+    transition: all 0.5s ease-out; /* Adjust the animation duration as needed */
+  }
+
+.box span {
+  display: inline-block;
+  position: relative;
+  transition: transform 1s ease;
+}
+.box div {
+  display: inline-block;
+  position: relative;
+  transition: transform 1s ease;
+}
+
+
+ .animated-character {
+  animation-name: moveCharacter;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+.animated-character {
+  animation-name: moveCharacter;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+@keyframes moveCharacter {
+  0% {
+      transform: scale(var(--scale)) rotate(180deg); 
+
+  }
+}
+
+
+
+/* Additional style for random tiny divs (assuming you are adding them via JS) */
+.tiny-div {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  animation: flyAround 1s infinite linear;
+}
+
+@keyframes flyAround {
+  0% {
+      transform: translate(0, 0);
+     opacity: 1;
+  }
+  100% {
+       transform: translate(var(--translateX), var(--translateY)) scale(var(--scale)) rotate(var(--rotate));
+        opacity: 0
+  }
+}
+
+
+.container {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .box {
+    width: 50%;
+    padding: 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    border: 1px solid black;
+  }
+  
+  .left {
+    float: left;
+  }
+  
+  .right {
+    float: right;
+  }

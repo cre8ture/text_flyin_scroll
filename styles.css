@@ -1,0 +1,104 @@
+.container {
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+
+.sbox {
+  width: 50%;
+  padding: 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  opacity: 1; /* Adjust the opacity as needed */
+  pointer-events: none;
+}
+
+.left {
+  float: left;
+  clear: both; /* Clear floats */
+}
+
+.right {
+  float: right;
+  clear: both; /* Clear floats */
+}
+
+/* Add these CSS rules to your stylesheet
+ .box {
+    position: absolute;
+    border: 2px solid red; 
+     box-sizing: border-box;
+    opacity: 1; 
+    pointer-events: none;;
+  } */
+
+.char {
+  display: inline-block;
+  transform-origin: center;
+  transition: all 0.5s ease-out; /* Adjust the animation duration as needed */
+}
+
+.box span {
+  display: inline-block;
+  position: relative;
+  transition: transform 1s ease;
+}
+.box div {
+  display: inline-block;
+  position: relative;
+  transition: transform 1s ease;
+}
+
+.animated-character {
+  animation-name: moveCharacter;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+.animated-character {
+  animation-name: moveCharacter;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+@keyframes moveCharacter {
+  0% {
+    transform: scale(var(--scale)) rotate(180deg);
+  }
+}
+
+
+
+/* Additional style for random tiny divs (assuming you are adding them via JS) */
+.tiny-div {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  animation: flyAround 1s infinite linear;
+}
+.line {
+  position: relative; /* Ensure this is here if you're moving spans absolutely within it */
+  overflow: visible; /* Allow overflow content to be visible */
+}
+
+.span-fly-in {
+  position: absolute; /* Absolute positioning for the spans */
+  opacity: 0; /* Start with spans hidden */
+  transition: left 1s, opacity 1s; /* Smooth transition for flying in and fading in */
+}
+
+
+.sbox-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 400px)
+  ); /* Maximize width to 400px */
+  grid-gap: 20px;
+}
+
+.sbox-container:nth-child(even) {
+  display: flex;
+  flex-direction: row-reverse; /* Reverse the order of children */
+}
